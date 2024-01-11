@@ -93,7 +93,7 @@ class PlotUpdater(QObject):
 class SpectrumAnalysisThread(QThread):
     def run(self):
         try:
-            subprocess.run(['python', 'spectrum_analysis.py'], timeout=60 * 1)  # Run for 1 minute (60 seconds)
+            subprocess.run(['python', '*.py'], timeout=60 * 1)  # Run for 1 minute (60 seconds)
         except subprocess.TimeoutExpired:
             print("Spectrum Analysis completed.")
 
@@ -267,7 +267,6 @@ class MainWindow(QMainWindow):
     def run_dash(self):
         print("run dash")
         # Start spectrum analysis in a separate thread
-        app = sepctrum_analysis()
         app.run_server(debug=True, threaded=True)
 
     def open_broswer(self):
