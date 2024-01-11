@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QTe
 from PyQt5.QtCore import pyqtSignal, QObject, QThread, QTimer, QDateTime
 import pyqtgraph as pg
 import numpy as np
-from spectrum_analysis import sepctrum_analysis
 from dash import Dash, dcc, html, dash_table
 import webbrowser
 import time
@@ -123,7 +122,7 @@ class MainWindow(QMainWindow):
 
         # 创建 IP 和端口输入框
         self.ip_port_input = QLineEdit(self)
-        self.ip_port_input.setText("192.168.48.212:1234")
+        self.ip_port_input.setText("192.168.1.1:1234")
         self.input_layout.addWidget(self.ip_port_input)
 
         # 创建按钮
